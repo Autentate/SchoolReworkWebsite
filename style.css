@@ -1,0 +1,229 @@
+body {
+    background: #FFFFFF;
+    color: #070707;
+}
+
+li{list-style-type: none;}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+ 
+.wrapper {
+
+    max-width: 1520px;
+    margin: 0 auto;
+
+}
+
+header {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.header_logo_inner-link img {
+    max-width: 120px;
+    min-height: 100px;
+}
+
+.header_logo_inner-title {
+    margin-top: 0px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 26px;
+    line-height: 35px;
+
+    color: #079241;
+}
+
+.header_logo_inner-title span {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+}
+
+.header_button {
+    margin-right: 10px;
+    padding: 10px 25px 8px 25px;
+
+    border: 1px solid #000;
+    border-radius: 4px;
+
+    background-position-x: left;
+
+    font-family: 'Golos Text', sans-serif;
+    text-decoration: none;
+    color: #000;
+    transition: all .6s;
+}
+.header_button:hover {
+    background: green;
+    color: #fff;
+    background-position-x: right;
+    transition: all .6s;
+}
+
+.header_nav {
+    display: flex;
+    gap: 45px;
+
+}
+
+.header_nav li {
+    position: relative;
+}
+
+.header_nav li:not(:last-child):after {
+    content: '•';
+    position: absolute;
+    right: -25px;
+}
+
+.header_nav a {
+    text-decoration: none;
+
+    font-family: 'Golos Text', sans-serif;
+    font-size: 16px;
+
+    color: gray;
+    transition: .3s;
+}
+
+.header_nav a:hover {
+    color: #070707;
+    transition: .3s;
+}
+
+
+.header_burger {
+    display: none;
+}
+
+@media (max-width: 1360px) {
+    .header_nav {
+        display: none;
+    }
+    .header_button {
+        display: none;
+    }
+
+    .header_burger {
+        display: block;
+        position: relative;
+        right: 5%;
+
+        width: 40px;
+        height: 20px;
+    }
+
+    .header_burger span {
+        width: 40px;
+        height: 3px;
+        background-color: #000;
+        position: absolute;
+    }
+
+    .header_burger span::before {
+        content: '';
+        width: 40px;
+        height: 3px;
+        background-color: #000;
+        position: absolute;
+        top: -10px;
+    }
+
+    .header_burger span::after {
+        content: '';
+        width: 40px;
+        height: 3px;
+        background-color: #000;
+        position: absolute;
+        top: 10px;
+    }
+}
+
+@media (max-width: 860px) {
+    .header_logo_inner-title {
+        display: none;
+    }
+}
