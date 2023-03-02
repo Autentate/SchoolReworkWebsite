@@ -149,11 +149,11 @@ header {
 
 }
 
-.header_nav li {
+.header_nav ul {
     position: relative;
 }
 
-.header_nav li:not(:last-child):after {
+.header_nav ul:not(:last-child):after {
     content: '•';
     position: absolute;
     right: -25px;
@@ -223,7 +223,5 @@ header {
 }
 
 @media (max-width: 860px) {
-    .header_logo_inner-title {
-        display: none;
-    }
+    .header_logo_inner-link {display: none;}
 }
